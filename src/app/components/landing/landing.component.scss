@@ -98,3 +98,46 @@ nav {
     }
   }
 }
+
+.text-info {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 600px;
+  color: white !important;
+
+  h1 {
+    font-family: 'rocketwildness';
+    font-size: 53px;
+  }
+
+  h3 {
+    font-family: 'Microsoft Sans Serif';
+    font-size: 23px;
+  }
+}
+
+.carousel-item {
+  background-color: #101014;
+  max-height: 633px;
+  height: 600px !important;
+}
+
+.item-of-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-indicators [data-bs-target] {
+  border-radius: 50% !important;
+  height: 19px;
+  width: 19px;
+  border: 1px solid white;
+  background-color: transparent;
+}
+
+.carousel-indicators .active {
+  background-color: white;
+}
