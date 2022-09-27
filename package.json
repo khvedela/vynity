@@ -25,6 +25,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "angular-tradingview-widget": "^0.1.1",
     "bootstrap": "^5.2.1",
     "jquery": "^3.6.1",
     "rxjs": "~7.5.0",
