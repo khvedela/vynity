@@ -1,36 +1,47 @@
-<main>
-  <nav>
-    <div class="logo">
-      <h1>Vynity</h1>
-    </div>
-    <div class="actions">
-      <fa-icon [icon]="faUser"></fa-icon>
-      <h3>Get Started</h3>
-    </div>
-  </nav>
+<nav class="navbar" (scroll)="onWindowScroll($event)">
+  <div class="logo">
+    <h1>Vynity</h1>
+  </div>
 
+  <div class="links">
+    <ul>
+      <li>Market</li>
+      <li>Plans</li>
+      <li>Social</li>
+      <li>Help</li>
+    </ul>
+  </div>
+
+  <div class="actions">
+    <fa-icon [icon]="faUser" [inverse]="inversePersonIcon" size="2xl" style="margin-bottom: 10px"></fa-icon>
+    <h3>Get Started</h3>
+  </div>
+</nav>
+
+<main (scroll)="onWindowScroll($event)">
   <div class="container-main">
     <div class="left-side">
       <h1>Feel the Future, <br> Be the Future</h1>
-<!--      &lt;!&ndash; TradingView Widget BEGIN &ndash;&gt;-->
-<!--      <div class="tradingview-widget-container">-->
-<!--        <div id="tradingview_bac65"></div>-->
-<!--        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>-->
-<!--        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>-->
-<!--      </div>-->
-<!--      &lt;!&ndash; TradingView Widget END &ndash;&gt;-->
+      <!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <div #btcPrice></div>
+      </div>
+      <!-- TradingView Widget END -->
 
       <!-- TradingView Widget BEGIN -->
-<!--      <div class="tradingview-widget-container">-->
-        <div id="tradingview_bac66"></div>
-<!--        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/EURUSD/?exchange=FX" rel="noopener" target="_blank"><span class="blue-text">EURUSD Rates</span></a> by TradingView</div>-->
-<!--        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js">-->
-
-<!--        </script>-->
-<!--      </div>-->
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <div #aaplPrice></div>
+      </div>
       <!-- TradingView Widget END -->
-      <div class="crypto"></div>
-      <div class="crypto"></div>
+
+      <!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <div #tslaPrice></div>
+      </div>
+      <!-- TradingView Widget END -->
     </div>
     <div class="right-side">
       <div class="info-box">
@@ -127,7 +138,7 @@
 
   <div class="plan-cards">
     <div class="plan-card" style="background: #101014">
-      <h1>LONG</h1>
+      <h1 style="color: white">LONG</h1>
         <div class="card-content">
         <div class="info">
           <h2>Forecast</h2>
@@ -153,7 +164,7 @@
     </div>
 
     <div class="plan-card" style="background: #101014">
-      <h1>LONG</h1>
+      <h1 style="color: white">MID</h1>
       <div class="card-content">
         <div class="info">
           <h2>Forecast</h2>
@@ -297,6 +308,130 @@
       <h1>This Week's Most Popular <span>Stocks</span></h1>
       <button>View All</button>
     </div>
-    <div class="right"></div>
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <div #marketOverview></div>
+    </div>
   </div>
 </section>
+
+<section class="faq">
+  <h1>Frequently Asked Questions</h1>
+  <mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          What is Vynity?
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          How do we predict prices?
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          What is Vynity's mission?
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          What's our roadmap?
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</section>
+<footer>
+  <div class="footer-info">
+    <div class="left">
+      <div class="brand-info">
+        <h1>VYNITY</h1>
+        <h4>Feel the Future, Be the Future</h4>
+      </div>
+
+      <div class="social-icons" style="display: grid; grid-template-columns: repeat(3, 1fr); width: 20px; gap: 47px">
+        <fa-icon [icon]="faTwitter" size="2xl"></fa-icon>
+        <fa-icon [icon]="faFacebook" size="2xl"></fa-icon>
+        <fa-icon [icon]="faYoutube" size="2xl"></fa-icon>
+        <fa-icon [icon]="faInstagram" size="2xl"></fa-icon>
+        <fa-icon [icon]="faTelegram" size="2xl"></fa-icon>
+        <fa-icon [icon]="faDiscord" size="2xl"></fa-icon>
+      </div>
+    </div>
+    <div class="right">
+      <ul>
+        <li style="color: #1DB4CC; font-weight: bold;">Products</li>
+        <li>Chart</li>
+        <li>Stock Screener</li>
+        <li>Forex Screener</li>
+        <li>Crypto Screener</li>
+        <li>Stock Heatmap</li>
+        <li>Crypto Heatmap</li>
+        <li>Economics Calendar</li>
+        <li>Earnings Calendar</li>
+      </ul>
+
+      <ul>
+        <li style="color: #1DB4CC; font-weight: bold;">Company</li>
+        <li>Chart</li>
+        <li>Stock Screener</li>
+        <li>Forex Screener</li>
+        <li>Crypto Screener</li>
+        <li>Stock Heatmap</li>
+        <li>Crypto Heatmap</li>
+        <li>Economics Calendar</li>
+        <li>Earnings Calendar</li>
+      </ul>
+
+      <ul>
+        <li style="color: #1DB4CC; font-weight: bold;">Community</li>
+        <li>Chart</li>
+        <li>Stock Screener</li>
+        <li>Forex Screener</li>
+        <li>Crypto Screener</li>
+        <li>Stock Heatmap</li>
+        <li>Crypto Heatmap</li>
+        <li>Economics Calendar</li>
+        <li>Earnings Calendar</li>
+      </ul>
+
+      <ul>
+        <li style="color: #1DB4CC; font-weight: bold;">For business</li>
+        <li>Chart</li>
+        <li>Stock Screener</li>
+        <li>Forex Screener</li>
+        <li>Crypto Screener</li>
+        <li>Stock Heatmap</li>
+        <li>Crypto Heatmap</li>
+        <li>Economics Calendar</li>
+        <li>Earnings Calendar</li>
+      </ul>
+    </div>
+  </div>
+  <div class="creds">
+    <img src="../../../assets/mobileStore.png">
+    <div class="d-flex align-items-center justify-content-center">
+      <img src="../../../assets/VynitySmall.png" alt="">
+      <h1>Select market data provided by <span>ICE Data Services</span>
+        © 2022 <span>Vynity, Inc.</span></h1>
+    </div>
+  </div>
+</footer>
