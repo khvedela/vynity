@@ -1,8 +1,5 @@
 import {AfterViewInit, Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild} from '@angular/core';
-import { faUser } from '@fortawesome/free-regular-svg-icons'
-import { faTwitter, faFacebook, faYoutube, faInstagram, faTelegram, faDiscord } from "@fortawesome/free-brands-svg-icons";
 
-declare const TradingView: any;
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -14,16 +11,7 @@ export class LandingComponent implements OnInit, AfterViewInit {
   @ViewChild('tslaPrice') tslaPrice?: ElementRef;
   @ViewChild('marketOverview') marketOverview?: ElementRef;
 
-  faUser = faUser;
-  faTwitter = faTwitter;
-  faFacebook = faFacebook;
-  faYoutube = faYoutube;
-  faInstagram = faInstagram;
-  faTelegram = faTelegram;
-  faDiscord = faDiscord;
-
   panelOpenState = false;
-  inversePersonIcon = true;
 
   constructor(private _renderer2: Renderer2) { }
 
@@ -35,10 +23,8 @@ export class LandingComponent implements OnInit, AfterViewInit {
     let element = document.querySelector('.navbar') as HTMLElement;
     if (window.pageYOffset > element.clientHeight) {
       element.classList.add('navbar-scrolled');
-      this.inversePersonIcon = false;
     } else {
       element.classList.remove('navbar-scrolled');
-      this.inversePersonIcon = true;
     }
   }
 

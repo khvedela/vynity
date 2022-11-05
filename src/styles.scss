@@ -45,3 +45,13 @@ table {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.drop-arrow-blue-text {
+  color: #1DB4CC;
+  text-decoration: underline;
+
+  &::after {
+    content: url("./assets/arrow-ios-downward-fill.png");
+    padding-left: 1rem;
+  }
+}

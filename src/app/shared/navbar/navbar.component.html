@@ -1,0 +1,19 @@
+<nav class="navbar" (scroll)="onWindowScroll($event)">
+  <div class="logo">
+    <h1><a routerLink="">Vynity</a></h1>
+  </div>
+
+  <div class="links">
+    <ul>
+      <li><a routerLink="/market">Market</a></li>
+      <li>Plans</li>
+      <li>Social</li>
+      <li>Help</li>
+    </ul>
+  </div>
+
+  <div class="actions">
+    <fa-icon [icon]="faUser" [inverse]="inversePersonIcon" size="2xl" style="margin-bottom: 10px"></fa-icon>
+    <h3>Get Started</h3>
+  </div>
+</nav>
