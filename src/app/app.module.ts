@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MarketComponent } from './components/market/market.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { PlansComponent } from './components/plans/plans.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FooterComponent } from './shared/footer/footer.component';
     MarketComponent,
     NavbarComponent,
     FooterComponent,
+    PlansComponent,
   ],
   imports: [
     BrowserModule,
